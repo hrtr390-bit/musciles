@@ -3547,7 +3547,7 @@ restartBtn.addEventListener("click", function () {
     console.log(message.length);
 
     const url =
-        `https://api.whatsapp.com/send?phone=${doctorWhatsapp}&text='السلام عليكم'`;
+        `https://api.whatsapp.com/send?phone=${doctorWhatsapp}&text=${encodeURIComponent(message)}`;
 
     console.log("رابط الواتساب:");
     console.log(url);
