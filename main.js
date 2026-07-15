@@ -3533,25 +3533,36 @@ function buildWhatsappMessage() {
 
 
 restartBtn.addEventListener("click", function () {
+    
 
-    // بناء الرسالة
+    console.log("قبل بناء الرسالة");
+    console.log(state.answers);
+
     const message = buildWhatsappMessage();
 
-    // للتأكد أثناء التجربة
     console.log("الرسالة:");
-    console.log(message);
+    console.log(message.length);
 
     console.log("طول الرسالة:");
     console.log(message.length);
 
-    // إنشاء رابط الواتساب
     const url =
-        `https://wa.me/${doctorWhatsapp}?text=${encodeURIComponent(message)}`;
+        `https://api.whatsapp.com/send?phone=${doctorWhatsapp}&text=${encodeURIComponent(message)}`;
 
     console.log("رابط الواتساب:");
     console.log(url);
 
-    // فتح الواتساب
-    window.open(url, "_blank");
+    // فتح الرابط بطريقة مختلفة
+    const link = document.createElement("a");
 
-});
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+});      
