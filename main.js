@@ -3556,7 +3556,7 @@ restartBtn.addEventListener("click", function () {
     const link = document.createElement("a");
 
     link.href = url;
-    link.target = "_blank";
+    link.target = "";
     link.rel = "noopener noreferrer";
 
     document.body.appendChild(link);
