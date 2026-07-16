@@ -3531,38 +3531,13 @@ function buildWhatsappMessage() {
 
 
 
-
 restartBtn.addEventListener("click", function () {
-    
-
-    console.log("قبل بناء الرسالة");
-    console.log(state.answers);
 
     const message = buildWhatsappMessage();
 
-    console.log("الرسالة:");
-    console.log(message.length);
-
-    console.log("طول الرسالة:");
-    console.log(message.length);
-
     const url =
-        `https://api.whatsapp.com/send?phone=${doctorWhatsapp}&text=${encodeURIComponent(message)}`;
+        `https://wa.me/${doctorWhatsapp}?text=${encodeURIComponent(message)}`;
 
-    console.log("رابط الواتساب:");
-    console.log(url);
+    window.location.href = url;
 
-    // فتح الرابط بطريقة مختلفة
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.target = "";
-    link.rel = "noopener noreferrer";
-
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
-
-});      
+});
