@@ -23,14 +23,7 @@ const lookOut = document.getElementById("look-out");
 
 const restartbtn = document.getElementById("restartBtn");
 
-restartbtn.addEventListener("click", function () {
 
-    // إغلاق نافذة النتائج
-     window.open(
-        "https://wa.me/201113385257",
-        "_blank"
-    );
-});
 
 
 
